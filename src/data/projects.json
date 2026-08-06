@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Blood Donation Camp",
+    "description": "Organizing annual blood donation drives to save lives and support local hospitals in Salem.",
+    "image": "ass1.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Tree Plantation Drive",
+    "description": "Environmental sustainability initiative planting thousands of saplings across Salem district.",
+    "image": "ass2.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Education for All",
+    "description": "Providing scholarships, school supplies, and educational support to underprivileged children.",
+    "image": "ass3.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Medical Camps",
+    "description": "Free health checkups and medical services for rural and underserved communities.",
+    "image": "ass4.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Polio Plus Campaign",
+    "description": "Supporting Rotary's global initiative to eradicate polio through awareness and vaccination drives.",
+    "image": "ass5.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Clean Water Initiative",
+    "description": "Building clean drinking water facilities in villages lacking access to safe water.",
+    "image": "ass8.jpeg"
+  }
+]

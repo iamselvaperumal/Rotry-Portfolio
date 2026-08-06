@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Rtn.PHF.Dr.R.RAGAVENDRA BALAJI",
+    "role": "PRESIDENT",
+    "designation": "PRESIDENT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Rtn.PHF.THAMARAI KANNAN",
+    "role": "IPP/EXECUTIVE SECRETARY/ CLUB MENTOR",
+    "designation": "IPP/EXECUTIVE SECRETARY/ CLUB MENTOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Rtn.TAMILARASAN MANI",
+    "role": "PRESIDENT ELECT",
+    "designation": "PRESIDENT ELECT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Rtn.S.SRINATH",
+    "role": "PRESIDENT NOMINEE",
+    "designation": "PRESIDENT NOMINEE",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Rtn.PHF.V.P.PRASANNAN",
+    "role": "SECRETARY",
+    "designation": "SECRETARY",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "Rtn.PHF.Arch.SURESH",
+    "role": "TREASURER",
+    "designation": "TREASURER",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "name": "Rtn.ANUPRIYA MANISEKAR",
+    "role": "JT.SECRETARY",
+    "designation": "JT.SECRETARY",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "name": "Rtn.KARTHICK NATARAJAN",
+    "role": "SERGEANT-AT-ARMS",
+    "designation": "SERGEANT-AT-ARMS",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "name": "Rtn.AMSA MURUGESAN",
+    "role": "VICE PRESIDENT",
+    "designation": "VICE PRESIDENT",
+    "year": "2025-26",
+    "image": ""
+  }
+]

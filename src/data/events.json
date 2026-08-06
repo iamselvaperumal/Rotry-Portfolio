@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Blood Donation Camp",
+    "date": "March 15, 2026",
+    "location": "Salem General Hospital",
+    "description": "Annual community blood donation drive organized by Rotary Club of Salem Happy.",
+    "image": "ass1.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Tree Plantation Drive",
+    "date": "April 22, 2026",
+    "location": "Salem City Park",
+    "description": "Environmental initiative planting 500 saplings across Salem district.",
+    "image": "ass2.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Education for All",
+    "date": "May 10, 2026",
+    "location": "Government School, Salem",
+    "description": "Distribution of school supplies and scholarships for underprivileged students.",
+    "image": "ass3.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Medical Camp",
+    "date": "June 5, 2026",
+    "location": "Community Hall, Salem",
+    "description": "Free health checkup camp for rural communities in Salem district.",
+    "image": "ass4.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Polio Awareness Rally",
+    "date": "July 12, 2026",
+    "location": "Salem Main Road",
+    "description": "Public awareness rally supporting Rotary's End Polio Now campaign.",
+    "image": "ass5.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Rotary Family Day",
+    "date": "August 20, 2026",
+    "location": "Rotary Club House, Salem",
+    "description": "Annual gathering celebrating fellowship and community service achievements.",
+    "image": "ass6.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Skill Development Workshop",
+    "date": "September 8, 2026",
+    "location": "Rotary Training Center",
+    "description": "Vocational training workshop for youth empowerment and employment readiness.",
+    "image": "ass7.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "Clean Water Project Launch",
+    "date": "October 3, 2026",
+    "location": "Rural Salem Village",
+    "description": "Inauguration of clean drinking water facility for underserved communities.",
+    "image": "ass8.jpeg"
+  }
+]

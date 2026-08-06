@@ -1,0 +1,16 @@
+[
+  { "id": 1, "title": "Blood Donation Camp", "image": "ass1.jpeg", "category": "Health" },
+  { "id": 2, "title": "Tree Plantation Drive", "image": "ass2.jpeg", "category": "Environment" },
+  { "id": 3, "title": "Education for All", "image": "ass3.jpeg", "category": "Education" },
+  { "id": 4, "title": "Medical Camp", "image": "ass4.jpeg", "category": "Health" },
+  { "id": 5, "title": "Polio Awareness Rally", "image": "ass5.jpeg", "category": "Health" },
+  { "id": 6, "title": "Rotary Family Day", "image": "ass6.jpeg", "category": "Community" },
+  { "id": 7, "title": "Skill Development Workshop", "image": "ass7.jpeg", "category": "Youth" },
+  { "id": 8, "title": "Clean Water Project", "image": "ass8.jpeg", "category": "Water" },
+  { "id": 9, "title": "Community Service Day", "image": "ass9.jpeg", "category": "Community" },
+  { "id": 10, "title": "Literacy Program", "image": "ass10.jpeg", "category": "Education" },
+  { "id": 11, "title": "Women Empowerment", "image": "ass11.jpeg", "category": "Community" },
+  { "id": 12, "title": "Senior Citizens Care", "image": "ass12.jpeg", "category": "Health" },
+  { "id": 13, "title": "Youth Leadership Camp", "image": "ass13.jpeg", "category": "Youth" },
+  { "id": 14, "title": "Annual Club Meeting", "image": "ass14.jpeg", "category": "Community" }
+]

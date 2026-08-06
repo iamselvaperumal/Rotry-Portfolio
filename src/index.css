@@ -1,28 +1,68 @@
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #061f23;
-  background: #fbf8f1;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/autoplay';
+
+@theme {
+  --color-navy: #06162b;
+  --color-navy-secondary: #0c1e35;
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c96a;
+  --color-gold-accent: #f4c542;
+  --color-gold-border: #d9b44a;
+  --color-dark-text: #1a1a1a;
+  --color-grey-text: #666666;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Poppins', sans-serif;
+  --radius-card: 20px;
+  --radius-button: 50px;
+  --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-w-[320px] font-body text-dark-text antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .section-padding {
+    @apply py-[90px];
+  }
+
+  .container-custom {
+    @apply mx-auto w-full max-w-[1400px] px-5 md:px-8;
+  }
+
+  .gold-ornament::before,
+  .gold-ornament::after {
+    content: '';
+    @apply h-px flex-1 bg-gradient-to-r from-transparent to-gold;
+  }
+
+  .gold-ornament::after {
+    @apply bg-gradient-to-l;
+  }
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
+.swiper-pagination-bullet {
+  @apply !bg-grey-text/40 !opacity-100;
 }
 
-button,
-input,
-textarea {
-  font: inherit;
+.swiper-pagination-bullet-active {
+  @apply !bg-gold !w-6 !rounded-full;
 }

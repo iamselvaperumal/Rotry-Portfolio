@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Rtn.PHF.Dr.R.RAGAVENDRA BALAJI",
+    "role": "President",
+    "designation": "PRESIDENT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Rtn. AMSA MURUGESAN",
+    "role": "Vice President",
+    "designation": "VICE PRESIDENT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Rtn.PHF.V.P.PRASANNAN",
+    "role": "Secretary",
+    "designation": "SECRETARY",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Rtn.PHF.Arch.SURESH",
+    "role": "Treasurer",
+    "designation": "TREASURER",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Rtn.ANUPRIYA MANISEKAR",
+    "role": "Joint Secretary",
+    "designation": "JT.SECRETARY",
+    "year": "2025-26",
+    "image": ""
+  }
+]

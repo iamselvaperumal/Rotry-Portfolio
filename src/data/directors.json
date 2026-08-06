@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Rtn.BHARANIVEL",
+    "role": "CLUB ADMINISTRATION",
+    "designation": "CLUB ADMINISTRATION",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Rtn.PHF.SREEDHAR BABU",
+    "role": "MEMBERSHIP",
+    "designation": "MEMBERSHIP",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Rtn.S.SRINATH",
+    "role": "PUBLIC IMAGE",
+    "designation": "PUBLIC IMAGE",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Rtn.DHANASEKAR",
+    "role": "SERVICE PROJECT",
+    "designation": "SERVICE PROJECT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Rtn.MANIKANDAN",
+    "role": "ROTARY FOUNDATION",
+    "designation": "ROTARY FOUNDATION",
+    "year": "2025-26",
+    "image": ""
+  }
+]

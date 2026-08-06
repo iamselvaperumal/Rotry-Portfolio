@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Rtn.Er.GOWTHAM",
+    "role": "NEW GEN/ SPORTS CO-ORDINATOR",
+    "designation": "NEW GEN/ SPORTS CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Rtn.RAMYA",
+    "role": "ROTARACT",
+    "designation": "ROTARACT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Rtn.PRABHU",
+    "role": "INTERACT",
+    "designation": "INTERACT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Rtn.METRO SANKAR",
+    "role": "RCC",
+    "designation": "RCC",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Rtn.SELVARAJ",
+    "role": "POLIO PLUS CO-ORDINATOR",
+    "designation": "POLIO PLUS CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "Rtn.VARADHARAJAN",
+    "role": "MY ROTARY APP",
+    "designation": "MY ROTARY APP",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "name": "Rtn.PHF.BALAMURUGAN",
+    "role": "CLUB WEBSITE",
+    "designation": "CLUB WEBSITE",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "name": "Rtn.SURESH KUMAR",
+    "role": "SIGNATURE PROJECT",
+    "designation": "SIGNATURE PROJECT",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "name": "Rtn.NEE.DHANASEKARAN",
+    "role": "ENVIRONMENT CO-ORDINATOR",
+    "designation": "ENVIRONMENT CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "name": "Rtn.UMA",
+    "role": "EVENT CO-ORDINATOR/ GREETING CO-ORDINATOR",
+    "designation": "EVENT CO-ORDINATOR/ GREETING CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "name": "Rtn.GOWTHAM",
+    "role": "GREETING CO-ORDINATOR",
+    "designation": "GREETING CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "name": "Rtn.Dr.MOHAN BABU",
+    "role": "KNOWLEDGE CO-ORDINATOR",
+    "designation": "KNOWLEDGE CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "name": "Rtn.DR.VIJAYALAKSHMI",
+    "role": "MEDICAL CAMP CO-ORDINATOR",
+    "designation": "MEDICAL CAMP CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "name": "Rtn.PRABHAKARAN",
+    "role": "SPORTS CO-ORDINATOR",
+    "designation": "SPORTS CO-ORDINATOR",
+    "year": "2025-26",
+    "image": ""
+  }
+]
