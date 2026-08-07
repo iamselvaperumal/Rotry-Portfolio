@@ -59,15 +59,15 @@ export default function MemberCarouselSection({
             {data.map((member) => (
               <SwiperSlide key={member.id}>
                 <motion.article
-                  whileHover={{ scale: 1.03, y: -4 }}
+                  whileHover={{ y: -4 }}
                   transition={{ duration: 0.3 }}
-                  className="flex flex-col items-center overflow-hidden rounded-[20px] border border-gold-border bg-white shadow-[var(--shadow-card)]"
+                  className="group flex flex-col items-center overflow-hidden rounded-[20px] border border-gold-border bg-white shadow-[var(--shadow-card)]"
                 >
                   <div className="relative w-full rounded-t-[20px] overflow-hidden bg-gold h-44 md:h-52 lg:h-60">
                     <img
                       src={member.image || getGenderIcon(member.name)}
                       alt={member.name}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gold/20" />
                   </div>
