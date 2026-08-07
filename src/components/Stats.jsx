@@ -22,19 +22,19 @@ export default function Stats() {
             custom={index * 0.1}
             whileHover={{ scale: 1.03, y: -4 }}
             transition={{ duration: 0.3 }}
-            className={`flex min-h-[180px] flex-col justify-center rounded-[20px] p-6 shadow-[var(--shadow-card)] ${
+            className={`group flex min-h-[180px] flex-col justify-center rounded-[20px] p-6 border border-gold/20 transition-all duration-300 shadow-[var(--shadow-card)] ${
               isNavy
-                ? 'bg-navy text-white'
-                : 'bg-gold text-navy'
+                ? 'bg-navy text-white hover:bg-gold hover:text-navy hover:border-gold'
+                : 'bg-gold text-navy hover:bg-navy hover:text-gold hover:border-gold'
             }`}
           >
             <Icon
               size={36}
-              className={`mb-3 ${isNavy ? 'text-gold' : 'text-navy'}`}
+              className={`mb-3 ${isNavy ? 'text-gold group-hover:text-navy' : 'text-navy group-hover:text-gold'}`}
             />
             <p className="font-heading text-4xl font-bold md:text-5xl">{stat.value}</p>
             <p className="mt-1 text-sm font-bold uppercase tracking-wider">{stat.label}</p>
-            <p className={`mt-2 text-xs leading-relaxed ${isNavy ? 'text-white/70' : 'text-navy/70'}`}>
+            <p className={`mt-2 text-xs leading-relaxed ${isNavy ? 'text-white/70 group-hover:text-navy/70' : 'text-navy/70 group-hover:text-gold/70'}`}>
               {stat.description}
             </p>
           </motion.article>

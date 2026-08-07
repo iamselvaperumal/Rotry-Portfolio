@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SectionHeading from './ui/SectionHeading'
 import { getPlaceholderImage } from '../utils/helpers'
+import maleIcon from '../assets/male-Profile-icon.png'
+import femaleIcon from '../assets/Female-profile-icon.png'
 
 export default function MemberCarouselSection({
   id,
@@ -12,6 +14,13 @@ export default function MemberCarouselSection({
   data,
   dark = false,
 }) {
+  const getGenderIcon = (name) => {
+    const lower = name.toLowerCase()
+    const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'uma']
+    const isFemale = femaleNames.some((female) => lower.includes(female))
+    return isFemale ? femaleIcon : maleIcon
+  }
+
   return (
     <section
       id={id}
@@ -52,23 +61,25 @@ export default function MemberCarouselSection({
                 <motion.article
                   whileHover={{ scale: 1.03, y: -4 }}
                   transition={{ duration: 0.3 }}
-                  className="flex flex-col items-center rounded-[20px] border border-gold-border bg-white p-6 shadow-[var(--shadow-card)]"
+                  className="flex flex-col items-center overflow-hidden rounded-[20px] border border-gold-border bg-white shadow-[var(--shadow-card)]"
                 >
-                  <div className="relative mb-4">
-                    <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl" />
+                  <div className="relative w-full bg-gold text-navy">
+                    <div className="absolute inset-0 bg-gold" />
                     <img
-                      src={member.image || getPlaceholderImage(member.name, 200)}
+                      src={member.image || getGenderIcon(member.name)}
                       alt={member.name}
-                      className="relative h-32 w-32 rounded-full border-4 border-gold object-cover object-top md:h-36 md:w-36"
+                      className="relative h-40 w-full object-cover object-center md:h-44"
                     />
                   </div>
-                  <h3 className="text-center font-heading text-sm font-bold text-navy md:text-base">
-                    {member.name}
-                  </h3>
-                  <p className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-gold">
-                    {member.role}
-                  </p>
-                  <p className="mt-1 text-xs text-grey-text">{member.year}</p>
+                  <div className="w-full p-6 text-center">
+                    <h3 className="font-heading text-sm font-bold text-navy md:text-base">
+                      {member.name}
+                    </h3>
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-gold">
+                      {member.role}
+                    </p>
+                    <p className="mt-1 text-xs text-grey-text">{member.year}</p>
+                  </div>
                 </motion.article>
               </SwiperSlide>
             ))}

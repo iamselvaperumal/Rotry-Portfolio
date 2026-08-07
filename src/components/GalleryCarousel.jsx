@@ -9,6 +9,8 @@ import { getAssetImage } from '../utils/helpers'
 
 export default function GalleryCarousel() {
   const [hoveredItem, setHoveredItem] = useState(null)
+  const [selectedItem, setSelectedItem] = useState(null)
+  const activeItem = selectedItem || hoveredItem
 
   return (
     <section id="gallery" className="section-padding bg-white">
@@ -48,6 +50,7 @@ export default function GalleryCarousel() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                   className="group cursor-pointer overflow-hidden rounded-[20px] shadow-[var(--shadow-card)]"
+                  onClick={() => setSelectedItem(item)}
                   onHoverStart={() => setHoveredItem(item)}
                   onHoverEnd={() => setHoveredItem(null)}
                 >
@@ -79,32 +82,44 @@ export default function GalleryCarousel() {
 
       {/* ── Full-image hover popup ── */}
       <AnimatePresence>
-        {hoveredItem && (
+        {activeItem && (
           <motion.div
             key="gallery-popup"
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.88 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="pointer-events-none fixed inset-0 z-[999] flex items-center justify-center"
+            className="pointer-events-auto fixed inset-0 z-[999] flex items-center justify-center"
           >
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+            <div
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={() => selectedItem && setSelectedItem(null)}
+            />
 
             {/* Image card */}
             <motion.div
               className="relative z-10 max-h-[85vh] max-w-[85vw] overflow-hidden rounded-[24px] shadow-[0_30px_80px_rgba(0,0,0,0.8)] border border-gold/30"
-              layoutId={`gallery-${hoveredItem.id}`}
+              layoutId={`gallery-${activeItem.id}`}
             >
+              {/* Close button (for tapped/selected state) */}
+              <button
+                type="button"
+                onClick={() => setSelectedItem(null)}
+                className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+                aria-label="Close full view"
+              >
+                <X size={18} />
+              </button>
               <img
-                src={getAssetImage(hoveredItem.image)}
-                alt={hoveredItem.title}
+                src={getAssetImage(activeItem.image)}
+                alt={activeItem.title}
                 className="block max-h-[75vh] max-w-[80vw] w-auto h-auto object-contain"
               />
               {/* Caption bar */}
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/95 via-navy/70 to-transparent px-6 py-5">
-                <p className="font-heading text-lg font-bold text-gold">{hoveredItem.title}</p>
-                <p className="text-sm text-white/70">{hoveredItem.category}</p>
+                <p className="font-heading text-lg font-bold text-gold">{activeItem.title}</p>
+                <p className="text-sm text-white/70">{activeItem.category}</p>
               </div>
             </motion.div>
           </motion.div>

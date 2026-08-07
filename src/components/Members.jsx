@@ -4,6 +4,8 @@ import { Mail, Search } from 'lucide-react'
 import membersData from '../data/members.json'
 import SectionHeading from './ui/SectionHeading'
 import GoldButton from './ui/GoldButton'
+import maleIcon from '../assets/male-Profile-icon.png'
+import femaleIcon from '../assets/Female-profile-icon.png'
 import { getPlaceholderImage, staggerContainer, fadeUp } from '../utils/helpers'
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -27,6 +29,13 @@ export default function Members() {
       return matchesSearch && matchesCategory && matchesLetter
     })
   }, [search, category, letter])
+
+  const getGenderIcon = (name) => {
+    const lower = name.toLowerCase()
+    const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'uma']
+    const isFemale = femaleNames.some((female) => lower.includes(female))
+    return isFemale ? femaleIcon : maleIcon
+  }
 
   return (
     <section id="members" className="section-padding bg-white">
@@ -111,9 +120,16 @@ export default function Members() {
                   alt={member.name}
                   className="h-24 w-24 rounded-full border-3 border-gold object-cover"
                 />
-                <h3 className="mt-3 text-center font-heading text-sm font-bold text-navy">
-                  {member.name}
-                </h3>
+                <div className="mt-3 flex items-center justify-center gap-2 text-center">
+                  <h3 className="text-center font-heading text-sm font-bold text-navy">
+                    {member.name}
+                  </h3>
+                  <img
+                    src={getGenderIcon(member.name)}
+                    alt="Gender icon"
+                    className="h-4 w-4 object-contain"
+                  />
+                </div>
                 <p className="mt-1 text-center text-xs font-semibold uppercase text-gold">
                   {member.role}
                 </p>

@@ -156,12 +156,12 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="lg:col-span-3 flex flex-col justify-center"
         >
-          <div className="rounded-[24px] border border-gold/60 bg-navy-secondary/85 p-6 shadow-[0_0_40px_rgba(212,175,55,0.18)] backdrop-blur-md md:p-7">
+          <div className="rounded-[20px] border border-gold/60 bg-navy-secondary/85 p-6 shadow-[0_0_40px_rgba(212,175,55,0.18)] backdrop-blur-md md:p-7">
             <div className="flex items-center justify-between mb-3">
               <span className="rounded-full bg-gold/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[2px] text-gold border border-gold/30">
                 President's Message
               </span>
-              <Sparkles className="h-4 w-4 text-gold" />
+              <Sparkles className="h-5 w-5 text-gold" />
             </div>
 
             <h2 className="font-heading text-large font-bold text-white md:text-large">

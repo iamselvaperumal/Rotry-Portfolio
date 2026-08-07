@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import allMembers from '../data/allMembers.json'
 import SectionHeading from './ui/SectionHeading'
 import { getPlaceholderImage } from '../utils/helpers'
+import maleIcon from '../assets/male-Profile-icon.png'
+import femaleIcon from '../assets/Female-profile-icon.png'
 
 const CATEGORIES = ['Office Bearers', 'Club Directors', 'Committee Chair']
 
@@ -12,31 +14,42 @@ const CATEGORY_COLORS = {
   'Committee Chair': 'bg-emerald-400/20 text-emerald-300 border border-emerald-400/40',
 }
 
-// Card width (190) + left+right margin (12+12) = 214px per card
-const CARD_W = 214
+// Card width (300) + left+right margin (12+12) = 324px per card
+const CARD_W = 324
 
 function MemberCard({ member }) {
   const badgeCls = CATEGORY_COLORS[member.category] || CATEGORY_COLORS['Office Bearers']
+
+  const getGenderIcon = (name) => {
+    const lower = name.toLowerCase()
+    const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'uma']
+    const isFemale = femaleNames.some((female) => lower.includes(female))
+    return isFemale ? femaleIcon : maleIcon
+  }
+
   return (
-    <div className="flex-shrink-0 w-[190px] mx-3 group">
-      <div className="overflow-hidden rounded-[18px] border border-gold/20 bg-navy-secondary shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:border-gold/60 transition-all duration-300 h-full">
+    <div className="flex-shrink-0 w-[300px] h-[300px] mx-3 group">
+      <div className="flex h-full flex-col overflow-hidden rounded-[18px] border border-gold/20 bg-navy-secondary shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:border-gold/60 transition-all duration-300">
         {/* Photo */}
-        <div className="aspect-[4/5] overflow-hidden bg-navy/60">
+        <div className="relative h-[65%] overflow-hidden bg-navy/60">
           <img
             src={member.image || getPlaceholderImage(member.name, 300)}
             alt={member.name}
-            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
+          <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-gold/95 border border-white/20 shadow-lg">
+            <img src={getGenderIcon(member.name)} alt="Gender icon" className="h-5 w-5 object-contain" />
+          </span>
         </div>
         {/* Info */}
-        <div className="px-3 py-3 text-center">
-          <span className={`inline-block rounded-full px-2 py-0.5 text-[8px] font-bold uppercase tracking-widest ${badgeCls}`}>
+        <div className="flex flex-1 flex-col items-center justify-center gap-1 px-3 py-3 text-center">
+          <span className={`inline-block rounded-full px-2 py-0.5 text-[7px] font-bold uppercase tracking-[0.18em] ${badgeCls}`}>
             {member.category}
           </span>
-          <h3 className="mt-2 font-heading text-xs font-bold text-white leading-snug line-clamp-2">
+          <h3 className="font-heading text-[11px] font-bold text-white leading-snug line-clamp-2">
             {member.name}
           </h3>
-          <p className="mt-1 text-[10px] font-semibold text-gold/80 uppercase tracking-wide leading-tight line-clamp-2">
+          <p className="text-[9px] font-semibold text-gold/80 uppercase tracking-[0.14em] leading-tight line-clamp-2">
             {member.designation}
           </p>
         </div>
@@ -55,14 +68,14 @@ export default function Leadership() {
     ? allMembers
     : allMembers.filter((m) => m.category === activeTab)
 
-  // Duplicate enough times so the track is always wide — 4 copies minimum
-  const copies = Math.max(4, Math.ceil(40 / members.length) + 1)
+  // Duplicate enough times so the track is always wide — keep it extra long for smooth continuous scrolling
+  const copies = Math.max(6, Math.ceil(60 / members.length) + 1)
   const track = Array.from({ length: copies }, () => members).flat()
 
   // One full set width in px (used for the translateX shift)
   const setWidth = members.length * CARD_W
-  // Duration: ~5px/s, so longer list = slower (looks consistent per card)
-  const duration = Math.max(12, members.length * 3.5)
+  // Duration: lower speed for a smoother, premium scroll
+  const duration = Math.max(45, members.length * 7)
 
   const keyframeName = `marquee-${activeTab.replace(/\s+/g, '')}`
 
@@ -146,7 +159,7 @@ export default function Leadership() {
 
       {/* Hint */}
       <div className="container-custom mt-8 flex justify-center">
-        <p className="text-xs text-white/30 italic">Designed & Developed By BIT BYTE TECHNOLOGIES</p>
+        <b><span className="text-xs text-white/30 italic">Designed & Developed By BIT BYTE TECHNOLOGIES</span></b>
       </div>
     </section>
   )

@@ -1,6 +1,7 @@
-import { Globe, Mail, Phone, MapPin, ChevronRight, Send } from 'lucide-react'
+import { Code, Cpu, Globe, Mail, Megaphone, Phone, Sparkles, MapPin, ChevronRight, Send } from 'lucide-react'
 import rotaryBrandLogo from '../assets/rotry-Logo.png'
 import bbLogo from '../assets/BB-Logo.png'
+import bbQr from '../assets/BB-Site-QR.png'
 
 export default function Footer() {
   return (
@@ -9,46 +10,102 @@ export default function Footer() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.16),_transparent_30%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_35%)] pointer-events-none" />
         <div className="container-custom relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.9fr] py-16">
-          <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 shadow-[0_35px_80px_rgba(8,19,37,0.35)] backdrop-blur-xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#F7E2A3]">
-              Rotary club signature
-            </span>
-            <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-              A footer that feels more like an invitation than an ending.
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm text-white/70 leading-relaxed">
-              Crafted to highlight your club's mission, membership energy, and meaningful contact points in one elevated section.
-            </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-[#0F2344]/80 p-5">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">Community anchor</p>
-                <p className="mt-3 text-sm text-white/85">
-                  More than meetings — we build local projects with lasting impact and a welcoming culture.
-                </p>
+          <div className="group rounded-[28px] border border-gold/20 bg-[#081426]/95 p-8 shadow-[0_35px_100px_rgba(8,19,37,0.45)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_45px_120px_rgba(212,175,55,0.25)]">
+            <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+              <div className="space-y-6">
+                <div className="relative flex items-start justify-between gap-4 rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-sm transition hover:border-gold/30">
+                  <div className="max-w-[72%]">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+                      <b>AI Science For Business</b>
+                    </span>
+                    <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+                      Bit Byte Technologies
+                    </h2>
+                    <p className="mt-3 text-sm text-white/70 leading-relaxed">
+                      Web App Development | Digital Marketing | Smart Solutions. Real Results.
+                    </p>
+                  </div>
+                  <img
+                    src={bbLogo}
+                    alt="Bit Byte Technologies logo"
+                    className="absolute left-70 top-0 h-35 w-35 object-contain"
+                  />
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-4 text-sm text-white/80 hover:border-gold/30 transition">
+                    <span className="inline-flex items-center gap-2 text-gold">
+                      <Code size={16} />
+                      Web App Development
+                    </span>
+                  </div>
+                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-4 text-sm text-white/80 hover:border-gold/30 transition">
+                    <span className="inline-flex items-center gap-2 text-gold">
+                      <Megaphone size={16} />
+                      Digital Marketing
+                    </span>
+                  </div>
+                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-4 text-sm text-white/80 hover:border-gold/30 transition">
+                    <span className="inline-flex items-center gap-2 text-gold">
+                      <Cpu size={16} />
+                      AI Automation
+                    </span>
+                  </div>
+                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-4 text-sm text-white/80 hover:border-gold/30 transition">
+                    <span className="inline-flex items-center gap-2 text-gold">
+                      <Sparkles size={16} />
+                      Brand Growth
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 text-sm text-white/80">
+                  <p className="text-[13px] uppercase tracking-[0.22em] text-gold/90">Company Signature</p>
+                  <p className="mt-3 leading-relaxed">
+                    Bit Byte Technologies helps to businesses transform ideas into scalable <b> AI Based digital solutions </b>through innovative technology, strategic digital marketing, and Real Market data-driven business growth.
+                  </p>
+                </div>
+
+                <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <a
+                    href="https://www.bitbytetech.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-[#06162b] transition hover:bg-[#f0c95a] shadow-lg sm:w-auto"
+                  >
+                    Discover Bit Byte
+                  </a>
+                </div>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-[#0F2344]/80 p-5">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">Partner in progress</p>
-                <p className="mt-3 text-sm text-white/85">
-                  Connect with our leaders, support youth programs, and collaborate on service initiatives.
-                </p>
+
+              <div className="space-y-5 rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-sm">
+                <div className="flex items-center justify-between gap-3 rounded-[24px] bg-[#06162b]/90 p-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-gold/90">Contact Bit Byte</p>
+                    <p className="mt-2 text-sm text-white">Professional support for your digital growth.</p>
+                  </div>                </div>
+
+                <div className="grid gap-3 text-sm text-white/80">
+                  <a href="tel:+919123456789" className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
+                    <Phone size={18} className="text-gold" />
+                    <span>+91 99437 43136</span>
+                  </a>
+                  <a href="mailto:info@bitbytetech.org" className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
+                    <Mail size={18} className="text-gold" />
+                    <span>reachus@bitbytetech.org</span>
+                  </a>
+                  <a href="https://www.bitbytetech.org" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
+                    <Globe size={18} className="text-gold" />
+                    <span>www.bitbytetech.org</span>
+                  </a>
+                </div>
+
+                <div className="rounded-[24px] border border-white/10 bg-[#06162b]/90 p-4 text-center">
+                  <p className="text-xs uppercase tracking-[0.22em] text-gold/90">Scan to connect</p>
+                  <img src={bbQr} alt="Bit Byte QR code" className="mx-auto mt-4 h-36 w-36 object-contain" />
+                  <p className="mt-3 text-xs text-white/60">Scan for website, WhatsApp, or business details.</p>
+                </div>
               </div>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-[#06162b] transition hover:bg-[#f0c95a] shadow-lg"
-              >
-                Join Rotary
-              </a>
-              <a
-                href="https://www.bitbytetech.org"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white sm:mt-0"
-              >
-                <span>Powered by Bit Byte</span>
-                <ChevronRight size={16} />
-              </a>
             </div>
           </div>
 
@@ -89,11 +146,11 @@ export default function Footer() {
               <div className="mt-6 grid gap-3">
                 <a className="flex items-center gap-3 rounded-3xl bg-white/5 px-4 py-3 hover:bg-white/10 transition">
                   <Phone size={18} className="text-[#D4AF37]" />
-                  <span className="text-sm text-white">+91 99437 43136</span>
+                  <span className="text-sm text-white">+91 99447 73385</span>
                 </a>
                 <a className="flex items-center gap-3 rounded-3xl bg-white/5 px-4 py-3 hover:bg-white/10 transition">
                   <Mail size={18} className="text-[#D4AF37]" />
-                  <span className="text-sm text-white">reachus@bitbytetech.org</span>
+                  <span className="text-sm text-white">rcsalemhappy@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -135,14 +192,14 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">Contact</h4>
             <div className="space-y-3 text-sm text-white/75">
-              <a href="mailto:reachus@bitbytetech.org" className="flex items-center gap-2 hover:text-white transition">
-                <Mail size={16} /> reachus@bitbytetech.org
+              <a href="mailto:rcsalemhappy@gmail.com" className="flex items-center gap-2 hover:text-white transition">
+                <Mail size={16} /> rcsalemhappy@gmail.com
               </a>
-              <a href="tel:+919943743136" className="flex items-center gap-2 hover:text-white transition">
-                <Phone size={16} /> +91 99437 43136
+              <a href="tel:+919944773385" className="flex items-center gap-2 hover:text-white transition">
+                <Phone size={16} /> +91 99447 73385
               </a>
-              <a href="https://www.bitbytetech.org" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition">
-                <Globe size={16} /> bitbytetech.org
+              <a href="www.rotarysalemhappy.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition">
+                <Globe size={16} /> www.rotarysalemhappy.in
               </a>
               <div className="flex items-center gap-2 text-white/50">
                 <MapPin size={16} />
