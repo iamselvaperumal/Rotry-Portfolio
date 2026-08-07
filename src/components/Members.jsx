@@ -116,9 +116,9 @@ export default function Members() {
             >
               <div className="flex flex-col items-center p-5">
                 <img
-                  src={member.image || getPlaceholderImage(member.name, 150)}
+                  src={member.image || getGenderIcon(member.name)}
                   alt={member.name}
-                  className="h-24 w-24 rounded-full border-3 border-gold object-cover"
+                  className="h-24 w-24 rounded-full border-3 border-gold object-cover bg-[#e0b230]"
                 />
                 <div className="mt-3 flex items-center justify-center gap-2 text-center">
                   <h3 className="text-center font-heading text-sm font-bold text-navy">

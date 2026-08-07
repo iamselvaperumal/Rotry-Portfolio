@@ -2,56 +2,56 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import allMembers from '../data/allMembers.json'
 import SectionHeading from './ui/SectionHeading'
-import { getPlaceholderImage } from '../utils/helpers'
 import maleIcon from '../assets/male-Profile-icon.png'
 import femaleIcon from '../assets/Female-profile-icon.png'
 
 const CATEGORIES = ['Office Bearers', 'Club Directors', 'Committee Chair']
 
-const CATEGORY_COLORS = {
-  'Office Bearers': 'bg-gold/20 text-gold border border-gold/40',
-  'Club Directors': 'bg-blue-400/20 text-blue-300 border border-blue-400/40',
-  'Committee Chair': 'bg-emerald-400/20 text-emerald-300 border border-emerald-400/40',
-}
-
-// Card width (300) + left+right margin (12+12) = 324px per card
-const CARD_W = 324
+// Card width (240px) + margin (mx-3 = 12px + 12px) = 264px per card
+const CARD_W = 264
 
 function MemberCard({ member }) {
-  const badgeCls = CATEGORY_COLORS[member.category] || CATEGORY_COLORS['Office Bearers']
-
-  const getGenderIcon = (name) => {
-    const lower = name.toLowerCase()
-    const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'uma']
+  const getProfileImage = (member) => {
+    if (member.image && member.image.trim() !== '') return member.image
+    const lower = member.name.toLowerCase()
+    const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'vijayalakshmi', 'uma']
     const isFemale = femaleNames.some((female) => lower.includes(female))
     return isFemale ? femaleIcon : maleIcon
   }
 
   return (
-    <div className="flex-shrink-0 w-[300px] h-[300px] mx-3 group">
-      <div className="flex h-full flex-col overflow-hidden rounded-[18px] border border-gold/20 bg-navy-secondary shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:border-gold/60 transition-all duration-300">
-        {/* Photo */}
-        <div className="relative h-[65%] overflow-hidden bg-navy/60">
+    <div className="flex-shrink-0 w-[240px] h-[340px] mx-3 group">
+      <div className="flex h-full flex-col overflow-hidden rounded-[20px] border border-gold/30 bg-[#051124] shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_10px_35px_rgba(212,175,55,0.25)]">
+        {/* Photo Container - Solid Gold Yellow Background */}
+        <div className="relative h-[62%] w-full overflow-hidden bg-[#e0b230] flex items-end justify-center">
           <img
-            src={member.image || getPlaceholderImage(member.name, 300)}
+            src={getProfileImage(member)}
             alt={member.name}
-            className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-gold/95 border border-white/20 shadow-lg">
-            <img src={getGenderIcon(member.name)} alt="Gender icon" className="h-5 w-5 object-contain" />
-          </span>
         </div>
-        {/* Info */}
-        <div className="flex flex-1 flex-col items-center justify-center gap-1 px-3 py-3 text-center">
-          <span className={`inline-block rounded-full px-2 py-0.5 text-[7px] font-bold uppercase tracking-[0.18em] ${badgeCls}`}>
+
+        {/* Member Details - Dark Navy Container */}
+        <div className="flex flex-1 flex-col items-center justify-between p-3.5 text-center bg-[#07152B]">
+          {/* Category Badge */}
+          <span className="inline-block rounded-full border border-gold/40 bg-navy/60 px-3 py-0.5 text-[8.5px] font-bold uppercase tracking-[0.16em] text-gold">
             {member.category}
           </span>
-          <h3 className="font-heading text-[11px] font-bold text-white leading-snug line-clamp-2">
-            {member.name}
-          </h3>
-          <p className="text-[9px] font-semibold text-gold/80 uppercase tracking-[0.14em] leading-tight line-clamp-2">
-            {member.designation}
-          </p>
+
+          <div className="flex flex-col items-center gap-1 w-full my-auto">
+            {/* Member Name */}
+            <h3 className="font-heading text-[11.5px] font-extrabold text-white uppercase leading-snug line-clamp-2 tracking-wide">
+              {member.name}
+            </h3>
+
+            {/* Designation */}
+            <p className="text-[9.5px] font-bold text-gold uppercase tracking-[0.15em] leading-tight line-clamp-2">
+              {member.designation}
+            </p>
+          </div>
+
+          {/* Underline Bar */}
+          <div className="w-8 h-[2px] bg-gold/70 rounded-full mt-1" />
         </div>
       </div>
     </div>
@@ -68,20 +68,17 @@ export default function Leadership() {
     ? allMembers
     : allMembers.filter((m) => m.category === activeTab)
 
-  // Duplicate enough times so the track is always wide — keep it extra long for smooth continuous scrolling
+  // Duplicate enough times so the track is always wide for smooth infinite scrolling
   const copies = Math.max(6, Math.ceil(60 / members.length) + 1)
   const track = Array.from({ length: copies }, () => members).flat()
 
-  // One full set width in px (used for the translateX shift)
   const setWidth = members.length * CARD_W
-  // Duration: lower speed for a smoother, premium scroll
-  const duration = Math.max(45, members.length * 7)
+  const duration = Math.max(40, members.length * 6)
 
   const keyframeName = `marquee-${activeTab.replace(/\s+/g, '')}`
 
   return (
     <section id="leadership" className="section-padding bg-navy overflow-hidden">
-      {/* Inject keyframe with correct pixel value */}
       <style>{`
         @keyframes ${keyframeName} {
           from { transform: translateX(0); }
@@ -96,16 +93,23 @@ export default function Leadership() {
           light
         />
 
+        {/* Decorative Top Accent Line with Diamond */}
+        <div className="flex items-center justify-center gap-3 mb-8 -mt-4">
+          <div className="h-[1px] w-24 md:w-36 bg-gradient-to-r from-transparent to-gold/50" />
+          <div className="w-2 h-2 rotate-45 bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
+          <div className="h-[1px] w-24 md:w-36 bg-gradient-to-l from-transparent to-gold/50" />
+        </div>
+
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {tabs.map((tab) => (
             <button
               key={tab}
               type="button"
               onClick={() => setActiveTab(tab)}
-              className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeTab === tab
-                ? 'bg-gold text-navy shadow-[0_4px_20px_rgba(212,175,55,0.45)]'
-                : 'border border-gold/30 text-gold/70 hover:border-gold hover:text-gold'
+              className={`rounded-full px-6 py-2 text-xs font-extrabold uppercase tracking-widest transition-all duration-300 ${activeTab === tab
+                ? 'bg-gold text-navy shadow-[0_0_20px_rgba(212,175,55,0.45)] border border-gold'
+                : 'border border-gold/40 text-gold/80 hover:border-gold hover:text-gold hover:bg-gold/10'
                 }`}
             >
               {tab}
@@ -120,13 +124,13 @@ export default function Leadership() {
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-center mb-8"
         >
-          <span className="rounded-full border border-gold/30 bg-navy-secondary/80 px-4 py-1.5 text-xs text-gold/80 font-semibold">
+          <span className="rounded-full border border-gold/40 bg-navy-secondary/90 px-5 py-1.5 text-xs text-gold font-bold tracking-wider shadow-inner">
             {members.length} Members
           </span>
         </motion.div>
       </div>
 
-      {/* ── Single-line infinite marquee ── */}
+      {/* ── Continuous Marquee ── */}
       <motion.div
         key={activeTab}
         initial={{ opacity: 0 }}
@@ -137,11 +141,11 @@ export default function Leadership() {
         onMouseLeave={() => setPaused(false)}
       >
         {/* Fade-edge masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-navy to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-navy to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-navy to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-navy to-transparent" />
 
         {/* Scrolling track */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden py-4">
           <div
             className="flex"
             style={{
@@ -157,10 +161,20 @@ export default function Leadership() {
         </div>
       </motion.div>
 
-      {/* Hint */}
-      <div className="container-custom mt-8 flex justify-center">
-        <b><span className="text-xs text-white/30 italic">Designed & Developed By BIT BYTE TECHNOLOGIES</span></b>
+      {/* Decorative Bottom Accent Line with Diamond */}
+      <div className="flex items-center justify-center gap-3 mt-8 mb-4">
+        <div className="h-[1px] w-24 md:w-36 bg-gradient-to-r from-transparent to-gold/50" />
+        <div className="w-2 h-2 rotate-45 bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
+        <div className="h-[1px] w-24 md:w-36 bg-gradient-to-l from-transparent to-gold/50" />
+      </div>
+
+      {/* Footer Attribution */}
+      <div className="container-custom flex justify-center text-center">
+        <span className="text-[11px] font-bold text-gold/70 tracking-widest uppercase italic">
+          Designed & Developed By <span className="text-gold font-extrabold">BIT BYTE TECHNOLOGIES</span>
+        </span>
       </div>
     </section>
   )
 }
+

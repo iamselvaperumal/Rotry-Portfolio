@@ -63,13 +63,13 @@ export default function MemberCarouselSection({
                   transition={{ duration: 0.3 }}
                   className="flex flex-col items-center overflow-hidden rounded-[20px] border border-gold-border bg-white shadow-[var(--shadow-card)]"
                 >
-                  <div className="relative w-full bg-gold text-navy">
-                    <div className="absolute inset-0 bg-gold" />
+                  <div className="relative w-full rounded-t-[20px] overflow-hidden bg-gold h-44 md:h-52 lg:h-60">
                     <img
                       src={member.image || getGenderIcon(member.name)}
                       alt={member.name}
-                      className="relative h-40 w-full object-cover object-center md:h-44"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gold/20" />
                   </div>
                   <div className="w-full p-6 text-center">
                     <h3 className="font-heading text-sm font-bold text-navy md:text-base">
