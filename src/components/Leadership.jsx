@@ -4,6 +4,7 @@ import allMembers from '../data/allMembers.json'
 import SectionHeading from './ui/SectionHeading'
 import maleIcon from '../assets/male-Profile-icon.png'
 import femaleIcon from '../assets/Female-profile-icon.png'
+import { getMemberPhoto } from '../utils/memberPhotos'
 
 const CATEGORIES = ['Office Bearers', 'Club Directors', 'Committee Chair']
 
@@ -12,7 +13,9 @@ const CARD_W = 264
 
 function MemberCard({ member }) {
   const getProfileImage = (member) => {
-    if (member.image && member.image.trim() !== '') return member.image
+    const memberPhoto = getMemberPhoto(member)
+    if (memberPhoto) return memberPhoto
+
     const lower = member.name.toLowerCase()
     const femaleNames = ['anupriya', 'amsa', 'ramya', 'dr.vijayalakshmi', 'vijayalakshmi', 'uma']
     const isFemale = femaleNames.some((female) => lower.includes(female))
@@ -23,7 +26,7 @@ function MemberCard({ member }) {
     <div className="flex-shrink-0 w-[240px] h-[340px] mx-3 group">
       <div className="flex h-full flex-col overflow-hidden rounded-[20px] border border-gold/30 bg-[#051124] shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:border-gold/70 group-hover:shadow-[0_10px_35px_rgba(212,175,55,0.25)]">
         {/* Photo Container - Solid Gold Yellow Background */}
-        <div className="relative h-[62%] w-full overflow-hidden bg-[#e0b230] flex items-end justify-center">
+        <div className="relative h-[67%] w-full overflow-hidden bg-[#e0b230] flex items-end justify-center">
           <img
             src={getProfileImage(member)}
             alt={member.name}
@@ -177,4 +180,3 @@ export default function Leadership() {
     </section>
   )
 }
-
