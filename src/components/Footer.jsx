@@ -199,7 +199,7 @@ export default function Footer() {
                 <Phone size={16} /> +91 99447 73385
               </a>
               <a href="www.rotarysalemhappy.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition">
-                <Globe size={16} /> www.rotarysalemhappy.in
+                <Globe size={16} />www.rotarysalemhappy.in
               </a>
               <div className="flex items-center gap-2 text-white/50">
                 <MapPin size={16} />

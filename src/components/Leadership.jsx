@@ -174,7 +174,7 @@ export default function Leadership() {
       {/* Footer Attribution */}
       <div className="container-custom flex justify-center text-center">
         <span className="text-[11px] font-bold text-gold/70 tracking-widest uppercase italic">
-          Designed & Developed By <span className="text-gold font-extrabold">BIT BYTE TECHNOLOGIES</span>
+          Designed & Developed By <a href="https://bitbytetech.org"><span className="text-gold font-extrabold">BIT BYTE TECHNOLOGIES</span></a>
         </span>
       </div>
     </section>
