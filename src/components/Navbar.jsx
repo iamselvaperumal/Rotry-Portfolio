@@ -37,16 +37,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 h-[90px] transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 h-[76px] transition-all duration-300 md:h-[90px] ${
         scrolled ? 'bg-navy shadow-lg shadow-black/20' : 'bg-navy'
       }`}
     >
-      <div className="container-custom flex h-full items-center justify-between gap-6">
-        <a href="#home" className="flex shrink-0 items-center gap-3 group">
-          <img src={rotaryBrandLogo} alt="Rotary Club of Salem Happy Logo" className="h-11 w-11 object-contain filter drop-shadow transition-transform duration-300 group-hover:scale-105" />
+      <div className="container-custom flex h-full items-center justify-between gap-3 md:gap-6">
+        <a href="#home" className="group flex min-w-0 items-center gap-2.5 md:gap-3">
+          <img src={rotaryBrandLogo} alt="Rotary Club of Salem Happy Logo" className="h-10 w-10 shrink-0 object-contain filter drop-shadow transition-transform duration-300 group-hover:scale-105 md:h-11 md:w-11" />
           <div className="leading-tight">
-            <p className="font-heading text-sm font-bold uppercase tracking-wider text-gold">Rotary</p>
-            <p className="text-xs font-medium text-white md:text-sm">Club of Salem Happy</p>
+            <p className="font-heading text-xs font-bold uppercase tracking-wider text-gold md:text-sm">Rotary</p>
+            <p className="whitespace-nowrap text-[11px] font-medium text-white sm:text-xs md:text-sm">Club of Salem Happy</p>
           </div>
         </a>
 
@@ -85,17 +85,18 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="text-white lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-gold lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-gold/20 bg-navy-secondary px-5 py-6 lg:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="max-h-[calc(100vh-76px)] overflow-y-auto border-t border-gold/20 bg-navy-secondary px-5 py-5 shadow-2xl lg:hidden">
+          <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -104,12 +105,12 @@ export default function Navbar() {
                   setActive(item.label)
                   setMobileOpen(false)
                 }}
-                className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gold"
+                className="rounded-lg px-3 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-white/5 hover:text-gold"
               >
                 {item.label}
               </a>
             ))}
-            <GoldButton href={joinRotaryUrl} className="mt-2 w-full justify-center">
+            <GoldButton href={joinRotaryUrl} className="mt-3 w-full justify-center text-sm">
               Join Rotary
             </GoldButton>
             <a
@@ -117,7 +118,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-lg border border-gold px-4 py-3 text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:bg-gold hover:text-navy"
+              className="mt-1 flex items-center justify-center gap-2 rounded-full border border-gold bg-white px-4 py-2.5 text-sm font-semibold uppercase tracking-wide text-navy transition-colors hover:bg-gold"
             >
               <PlayStoreIcon />
               Download the App

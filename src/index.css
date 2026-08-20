@@ -23,10 +23,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
-    @apply m-0 min-w-[320px] font-body text-dark-text antialiased;
+    @apply m-0 min-w-[320px] overflow-x-hidden font-body text-dark-text antialiased;
   }
 
   h1,

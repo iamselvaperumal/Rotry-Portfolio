@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative mt-[90px] min-h-[680px] overflow-hidden bg-navy"
+      className="relative mt-[76px] min-h-[680px] overflow-hidden bg-navy md:mt-[90px]"
     >
       {/* Background Image Container with hero-bg.png */}
       <div className="absolute inset-0 z-0">
