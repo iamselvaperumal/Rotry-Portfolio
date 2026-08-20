@@ -3,6 +3,20 @@ import { Menu, X } from 'lucide-react'
 import GoldButton from './ui/GoldButton'
 import rotaryBrandLogo from '../assets/rotry-Logo.png'
 
+const appDownloadUrl = 'https://play.google.com/store/apps/details?id=com.vexora.ragatv'
+const joinRotaryUrl = 'https://rotaryhappyclub.salemragatv.in/'
+
+function PlayStoreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7 drop-shadow-sm">
+      <path fill="#00D7FF" d="M3.35 2.3c-.22.28-.35.67-.35 1.14v17.12c0 .47.13.86.35 1.14L13.1 12 3.35 2.3Z" />
+      <path fill="#00F076" d="m4.03 1.9 11.5 6.54-2.43 3.57L3.35 2.3c.18-.23.42-.38.68-.4Z" />
+      <path fill="#FFEA00" d="m15.53 15.56-11.5 6.54a.91.91 0 0 1-.68-.4l9.75-9.7 2.43 3.56Z" />
+      <path fill="#FF3A44" d="m20.12 10.66-4.59-2.22L13.1 12l2.43 3.56 4.59-2.22c1.17-.57 1.17-2.11 0-2.68Z" />
+    </svg>
+  )
+}
+
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -54,8 +68,19 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <GoldButton href="#join">Join Rotary</GoldButton>
+        <div className="hidden items-center gap-3 lg:flex">
+          <GoldButton href={joinRotaryUrl}>Join Rotary</GoldButton>
+          <a
+            href={appDownloadUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Download the Rotary Happy application from Google Play"
+            title="Download the application from Google Play"
+            className="flex h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-white/25 bg-white px-4 text-xs font-bold uppercase tracking-wide text-navy transition-all duration-300 hover:scale-105 hover:border-gold hover:shadow-lg hover:shadow-gold/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          >
+            <PlayStoreIcon />
+            <span>Download the App</span>
+          </a>
         </div>
 
         <button
@@ -84,9 +109,19 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <GoldButton href="#join" className="mt-2 w-full justify-center">
+            <GoldButton href={joinRotaryUrl} className="mt-2 w-full justify-center">
               Join Rotary
             </GoldButton>
+            <a
+              href={appDownloadUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-lg border border-gold px-4 py-3 text-sm font-semibold uppercase tracking-wider text-gold transition-colors hover:bg-gold hover:text-navy"
+            >
+              <PlayStoreIcon />
+              Download the App
+            </a>
           </nav>
         </div>
       )}

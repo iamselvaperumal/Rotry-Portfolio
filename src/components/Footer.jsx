@@ -28,7 +28,7 @@ export default function Footer() {
                   <img
                     src={bbLogo}
                     alt="Bit Byte Technologies logo"
-                    className="absolute left-70 top-0 h-35 w-35 object-contain"
+                    className="absolute left-59 bottom-18 h-50 w-50 object-contain"
                   />
                 </div>
 
@@ -198,7 +198,7 @@ export default function Footer() {
               <a href="tel:+919944773385" className="flex items-center gap-2 hover:text-white transition">
                 <Phone size={16} /> +91 99447 73385
               </a>
-              <a href="www.rotarysalemhappy.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition">
+              <a href="https://www.rotarysalemhappy.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition">
                 <Globe size={16} />www.rotarysalemhappy.in
               </a>
               <div className="flex items-center gap-2 text-white/50">
