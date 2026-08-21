@@ -10,6 +10,8 @@ const PHOTO_ALIASES = {
   'karthick natarajan': 'karthick nadrajan',
   prabhakaran: 'prabakaran',
   'suresh kumar': 'sursh kumar',
+  srinath: 'varadharajan',
+  varadharajan: 'srinath',
 }
 
 const normalizeText = (value) =>
