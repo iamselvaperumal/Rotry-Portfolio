@@ -134,13 +134,13 @@ export default function Hero() {
             />
 
             {/* Floating President Badge Overlay */}
-            <div className="-mt-8 z-30 flex items-center gap-3 rounded-2xl border border-gold/70 bg-navy/95 px-5 py-2.5 text-center shadow-[0_15px_40px_rgba(0,0,0,0.8)] backdrop-blur-md border-t-2 border-t-gold">
+            <div className="z-30 -mt-8 flex max-w-[calc(100vw-40px)] items-center gap-2 rounded-2xl border border-gold/70 border-t-2 border-t-gold bg-navy/95 px-3 py-2.5 text-center shadow-[0_15px_40px_rgba(0,0,0,0.8)] backdrop-blur-md sm:gap-3 sm:px-5">
               <img src={rotaryBrandLogo} alt="Rotary Logo" className="h-7 w-7 object-contain drop-shadow" />
               <div className="text-left">
                 <div className="flex items-center gap-1.5 text-gold text-[10px] font-bold uppercase tracking-widest">
                   <Award size={13} /> Club President
                 </div>
-                <h3 className="font-heading text-base md:text-lg font-bold text-white leading-tight tracking-wide">
+                <h3 className="break-words font-heading text-xs font-bold leading-tight tracking-wide text-white sm:text-base md:text-lg">
                   Rtn.PHF.Dr.R.RAGAVENDRA BALAJI
                 </h3>
                 <p className="text-[11px] text-gold-light font-medium">Rotary Salem Happy • 2025–2026</p>

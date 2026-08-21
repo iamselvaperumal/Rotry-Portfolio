@@ -18,7 +18,7 @@ export default function Footer() {
                     <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
                       <b>AI Science For Business</b>
                     </span>
-                    <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+                    <h2 className="mt-5 break-words text-2xl font-extrabold tracking-tight text-white min-[400px]:text-3xl sm:text-4xl md:text-5xl">
                       Bit Byte Technologies
                     </h2>
                     <p className="mt-3 text-sm text-white/70 leading-relaxed">
@@ -110,13 +110,19 @@ export default function Footer() {
           </div>
 
           <div className="grid min-w-0 gap-5">
-            <div className="min-w-0 overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 shadow-[0_30px_70px_rgba(0,0,0,0.32)] sm:p-6">
-              <div className="flex items-center justify-between gap-4">
-                <div>
+            <div className="relative w-full min-w-0 max-w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 shadow-[0_30px_70px_rgba(0,0,0,0.32)] sm:p-6">
+              <div className="min-w-0 pr-20 sm:pr-24">
+                <div className="min-w-0">
                   <span className="text-[11px] uppercase tracking-[0.22em] text-[#D4AF37]">Club pulse</span>
-                  <h3 className="mt-3 text-xl font-bold text-white">Our latest focus</h3>
+                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">Our latest focus</h3>
                 </div>
-                <img src={rotaryBrandLogo} alt="Rotary badge" className="h-12 w-12 object-contain" />
+              </div>
+              <div className="absolute right-4 top-4 flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-[#06162b] p-1.5 shadow-[0_4px_16px_rgba(0,0,0,0.45)] sm:right-6 sm:top-6 sm:h-[72px] sm:w-[72px]">
+                <img
+                  src={rotaryBrandLogo}
+                  alt="Rotary badge"
+                  className="h-full w-full object-contain drop-shadow-[0_2px_3px_rgba(0,0,0,0.7)]"
+                />
               </div>
               <div className="mt-6 space-y-4 text-sm text-white/75">
                 <div className="rounded-3xl bg-white/5 p-4">
@@ -130,15 +136,15 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="min-w-0 overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 text-white sm:p-6">
-              <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="relative w-full min-w-0 max-w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 text-white sm:p-6">
+              <div className="min-w-0 pr-16 sm:pr-20">
                 <div className="min-w-0">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-[#D4AF37]">Member spotlight</p>
                   <h3 className="mt-3 text-xl font-bold">Leading with heart</h3>
                 </div>
-                <div className="rounded-full bg-[#D4AF37]/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#D4AF37]">
-                  2025
-                </div>
+              </div>
+              <div className="absolute right-4 top-4 rounded-full bg-[#D4AF37]/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D4AF37] sm:right-6 sm:top-6 sm:tracking-[0.24em]">
+                2025
               </div>
               <p className="mt-5 text-sm text-white/70">
                 Get in touch with our club to explore membership, volunteering, and sponsorship opportunities.
