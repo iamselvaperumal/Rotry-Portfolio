@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="container-custom flex h-full items-center justify-between gap-3 md:gap-6">
         <a href="#home" className="group flex min-w-0 items-center gap-2.5 md:gap-3">
           <img src={rotaryBrandLogo} alt="Rotary Club of Salem Happy Logo" className="h-10 w-10 shrink-0 object-contain filter drop-shadow transition-transform duration-300 group-hover:scale-105 md:h-11 md:w-11" />
-          <div className="leading-tight">
+          <div className="hidden leading-tight min-[430px]:block">
             <p className="font-heading text-xs font-bold uppercase tracking-wider text-gold md:text-sm">Rotary</p>
             <p className="whitespace-nowrap text-[11px] font-medium text-white sm:text-xs md:text-sm">Club of Salem Happy</p>
           </div>
@@ -83,15 +83,33 @@ export default function Navbar() {
           </a>
         </div>
 
-        <button
-          type="button"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-gold lg:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileOpen}
-        >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 lg:hidden sm:gap-2">
+          <a
+            href={joinRotaryUrl}
+            className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-gold px-3 text-[10px] font-bold uppercase tracking-wide text-navy transition-colors hover:bg-white sm:h-10 sm:px-4 sm:text-xs"
+          >
+            Join Rotary
+          </a>
+          <a
+            href={appDownloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download the Rotary Happy application from Google Play"
+            title="Download the application from Google Play"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-gold sm:h-10 sm:w-10"
+          >
+            <PlayStoreIcon />
+          </a>
+          <button
+            type="button"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-gold sm:h-11 sm:w-11"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
@@ -110,19 +128,6 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <GoldButton href={joinRotaryUrl} className="mt-3 w-full justify-center text-sm">
-              Join Rotary
-            </GoldButton>
-            <a
-              href={appDownloadUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="mt-1 flex items-center justify-center gap-2 rounded-full border border-gold bg-white px-4 py-2.5 text-sm font-semibold uppercase tracking-wide text-navy transition-colors hover:bg-gold"
-            >
-              <PlayStoreIcon />
-              Download the App
-            </a>
           </nav>
         </div>
       )}

@@ -30,6 +30,11 @@
     @apply m-0 min-w-[320px] overflow-x-hidden font-body text-dark-text antialiased;
   }
 
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
   h1,
   h2,
   h3,
