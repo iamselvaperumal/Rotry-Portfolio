@@ -5,20 +5,20 @@ import bbQr from '../assets/BB-Site-QR.png'
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full font-sans text-white">
+    <footer id="contact" className="site-footer w-full overflow-hidden font-sans text-white">
       <div className="relative overflow-hidden bg-[#06162b]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.16),_transparent_30%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_35%)] pointer-events-none" />
         <div className="container-custom relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.9fr] py-16">
-          <div className="group rounded-[28px] border border-gold/20 bg-[#081426]/95 p-8 shadow-[0_35px_100px_rgba(8,19,37,0.45)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_45px_120px_rgba(212,175,55,0.25)]">
-            <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
-              <div className="space-y-6">
-                <div className="relative flex items-start justify-between gap-4 rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-sm transition hover:border-gold/30">
-                  <div className="max-w-[72%]">
+          <div className="group min-w-0 overflow-hidden rounded-[28px] border border-gold/20 bg-[#081426]/95 p-4 shadow-[0_35px_100px_rgba(8,19,37,0.45)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_45px_120px_rgba(212,175,55,0.25)] sm:p-8">
+            <div className="grid min-w-0 gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+              <div className="min-w-0 space-y-6">
+                <div className="relative min-w-0 overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-4 shadow-sm transition hover:border-gold/30 sm:p-5">
+                  <div className="relative z-10 max-w-full sm:max-w-[72%]">
                     <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
                       <b>AI Science For Business</b>
                     </span>
-                    <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+                    <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                       Bit Byte Technologies
                     </h2>
                     <p className="mt-3 text-sm text-white/70 leading-relaxed">
@@ -28,7 +28,7 @@ export default function Footer() {
                   <img
                     src={bbLogo}
                     alt="Bit Byte Technologies logo"
-                    className="absolute left-59 bottom-18 h-50 w-50 object-contain"
+                    className="absolute right-2 top-2 h-20 w-20 object-contain opacity-25 sm:bottom-18 sm:left-59 sm:right-auto sm:top-auto sm:h-50 sm:w-50 sm:opacity-100"
                   />
                 </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="space-y-5 rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-sm">
+              <div className="min-w-0 space-y-5 rounded-[24px] border border-white/10 bg-white/5 p-4 shadow-sm sm:p-5">
                 <div className="flex items-center justify-between gap-3 rounded-[24px] bg-[#06162b]/90 p-4">
                   <div>
                     <p className="text-xs uppercase tracking-[0.22em] text-gold/90">Contact Bit Byte</p>
@@ -90,9 +90,9 @@ export default function Footer() {
                     <Phone size={18} className="text-gold" />
                     <span>+91 99437 43136</span>
                   </a>
-                  <a href="mailto:info@bitbytetech.org" className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
-                    <Mail size={18} className="text-gold" />
-                    <span>reachus@bitbytetech.org</span>
+                  <a href="mailto:info@bitbytetech.org" className="flex min-w-0 items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
+                    <Mail size={18} className="shrink-0 text-gold" />
+                    <span className="min-w-0 break-all">reachus@bitbytetech.org</span>
                   </a>
                   <a href="https://www.bitbytetech.org" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-[#06162b]/80 px-4 py-3 transition hover:border-gold/30 hover:bg-[#0f2a4a]/90">
                     <Globe size={18} className="text-gold" />
@@ -109,8 +109,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-5">
-            <div className="rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-6 shadow-[0_30px_70px_rgba(0,0,0,0.32)]">
+          <div className="grid min-w-0 gap-5">
+            <div className="min-w-0 overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 shadow-[0_30px_70px_rgba(0,0,0,0.32)] sm:p-6">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <span className="text-[11px] uppercase tracking-[0.22em] text-[#D4AF37]">Club pulse</span>
@@ -130,9 +130,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-6 text-white">
-              <div className="flex items-center justify-between">
-                <div>
+            <div className="min-w-0 overflow-hidden rounded-[28px] border border-white/10 bg-[#0f1f3e]/95 p-4 text-white sm:p-6">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-[#D4AF37]">Member spotlight</p>
                   <h3 className="mt-3 text-xl font-bold">Leading with heart</h3>
                 </div>
@@ -148,9 +148,9 @@ export default function Footer() {
                   <Phone size={18} className="text-[#D4AF37]" />
                   <span className="text-sm text-white">+91 99447 73385</span>
                 </a>
-                <a className="flex items-center gap-3 rounded-3xl bg-white/5 px-4 py-3 hover:bg-white/10 transition">
-                  <Mail size={18} className="text-[#D4AF37]" />
-                  <span className="text-sm text-white">rcsalemhappy@gmail.com</span>
+                <a className="flex min-w-0 items-center gap-3 rounded-3xl bg-white/5 px-4 py-3 hover:bg-white/10 transition">
+                  <Mail size={18} className="shrink-0 text-[#D4AF37]" />
+                  <span className="min-w-0 break-all text-sm text-white">rcsalemhappy@gmail.com</span>
                 </a>
               </div>
             </div>

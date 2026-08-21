@@ -35,6 +35,10 @@
     text-justify: inter-word;
   }
 
+  .site-footer p {
+    text-align: left;
+  }
+
   h1,
   h2,
   h3,
